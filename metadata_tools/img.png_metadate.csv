@@ -1,0 +1,21 @@
+SourceFile,../tests/test_files/img.png
+ExifTool:ExifToolVersion,12.51
+File:FileName,img.png
+File:Directory,../tests/test_files
+File:FileSize,15003
+File:FileModifyDate,2024:04:23 17:38:07+03:00
+File:FileAccessDate,2024:04:23 17:38:23+03:00
+File:FileInodeChangeDate,2024:04:23 17:38:07+03:00
+File:FilePermissions,100644
+File:FileType,PNG
+File:FileTypeExtension,PNG
+File:MIMEType,image/png
+PNG:ImageWidth,342
+PNG:ImageHeight,250
+PNG:BitDepth,8
+PNG:ColorType,6
+PNG:Compression,0
+PNG:Filter,0
+PNG:Interlace,0
+Composite:ImageSize,342 250
+Composite:Megapixels,0.0855
