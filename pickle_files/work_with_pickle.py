@@ -1,12 +1,12 @@
 import pickle
 
+from date.tags_to_update import important_data
 from metadata_tools.read_metadata_from_image import read_image_metadate
-from metadata_tools.read_metadate_from_file import important_data
 
 
 def save_metadate_in_pickle_file(path_to_image_file: str):
     metadate_dict = read_image_metadate(path_to_image_file)
-    path_to_pickle_file = '../metadate.pickle'
+    path_to_pickle_file = '../metadata.pickle'
     with open(path_to_pickle_file, 'wb') as pickle_file:
         pickle.dump(metadate_dict, pickle_file)
     return path_to_pickle_file
