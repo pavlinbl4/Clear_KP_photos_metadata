@@ -8,7 +8,7 @@ def get_file_extension(path_to_file: str) -> str:
     return extension
 
 
-def modify_caption(image_metadata):
+def modify_caption(image_metadata: dict) -> dict:
     try:
         caption = image_metadata['XMP:Description'].replace('\n', ' ')
         logger.info(caption)
