@@ -11,7 +11,7 @@ class FindFilesInDirectory(TestCase):
                               list)
 
         self.assertEqual(tested_function[0],
-                         '../tests/test_files/20211201PEV_2795-Edit.JPG', )
+                         '../tests/test_files/KSP_018082_00016_1h.JPG', )
 
 
 if __name__ == '__main__':

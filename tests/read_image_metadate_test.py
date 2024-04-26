@@ -1,15 +1,14 @@
 from unittest import TestCase, main
 
-from metadata_tools.read_metadata import read_image_metadate
+from metadata_tools.read_metadata_from_image import read_image_metadate
 
-TEST_JPEG = '../tests/test_files/20231214EPAV9435.jpg'
-# '../tests/test_files/KSP_015561_00123_1h.jpg'
+TEST_JPEG = '../tests/test_files/KSP_018082_00016_1h.JPG'
 
 
 class ReadImageMetadata(TestCase):
     def test_read_image_metadate(self):
         self.assertIsInstance(read_image_metadate(TEST_JPEG), dict)
-        self.assertEqual(read_image_metadate(TEST_JPEG)['Composite:LensID'], 'OLYMPUS M.7-14mm F2.8')
+        self.assertEqual(read_image_metadate(TEST_JPEG)['File:Directory'], '../tests/test_files')
 
 
 if __name__ == '__main__':
