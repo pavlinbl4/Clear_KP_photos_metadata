@@ -26,4 +26,6 @@ important_data = [
     'XMP:Country',
     'XMP:City',
     'XMP:Subject',
-    'XMP:Instructions']
+    'XMP:Instructions',
+    'XMP:CreateDate',
+]
