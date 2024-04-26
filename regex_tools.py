@@ -4,8 +4,13 @@ from loguru import logger
 
 def get_file_extension(path_to_file: str) -> str:
     re_pattern = r'(?<=\.)[^.]+$'
-    extension = re.findall(re_pattern, path_to_file)[0]
-    return extension
+    try:
+        extension = re.findall(re_pattern, path_to_file)[0]
+        return extension
+    except IndexError as e:
+        logger.info(path_to_file)
+        return 'no_extension'
+
 
 
 def modify_caption(image_metadata: dict) -> dict:
