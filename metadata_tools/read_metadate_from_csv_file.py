@@ -7,8 +7,6 @@ import pickle
 
 from icecream import ic
 
-from metadata_tools.write_metadata import add_xmp_date_to_image_file
-
 important_data = [
     # 'IPTC:Country-PrimaryLocationCode',
     # 'IPTC:By-line',
@@ -48,13 +46,3 @@ def read_important_metadate_from_pickle_file(path_to_pickle_file):
         if key in important_data:
             xmp_date_dict[key] = pickle_dict[key]
     return xmp_date_dict
-
-
-if __name__ == '__main__':
-    # xmp_date = read_important_metadate_from_csv_file('../metadata_tools/all_fields.JPG_metadate.csv')
-    xmp_date = read_important_metadate_from_pickle_file('../metadata_tools/metadate.pickle')
-    ic(xmp_date)
-
-    add_xmp_date_to_image_file(
-        '/Volumes/big4photo/_PYTHON/Clear_KP_photos_metadata/tests/test_files/20211201PEV_2795-Edit.JPG',
-        xmp_date)
