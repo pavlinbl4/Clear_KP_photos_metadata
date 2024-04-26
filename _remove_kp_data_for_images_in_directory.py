@@ -1,4 +1,3 @@
-from metadata_tools.clear_from_kp import clear_image_metadata_from_kp_info
 from metadata_tools.metadate_optimization import metadate_clearing
 from tk_tools import select_folder_via_gui
 from find_file_hdd import find_files_in_dir_with_extension
@@ -17,7 +16,7 @@ def main():
     images_list = find_files_in_dir_with_extension(path_to_folder,
                                                    files_extensions=('jpg', 'jpeg', 'dng', 'nef', 'orf'))
 
-    # edit metadate in images
+    # edit metadata in images
     for image in images_list:
         metadate_clearing(image)
 
