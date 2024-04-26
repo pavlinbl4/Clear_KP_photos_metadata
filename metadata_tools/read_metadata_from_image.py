@@ -3,6 +3,7 @@ import exiftool
 from icecream import ic
 from loguru import logger
 import csv
+import pickle
 
 
 def read_image_metadate(path_to_image_file: str) -> dict:
@@ -28,11 +29,18 @@ def save_metadate_in_file(path_to_image_file: str):
             cvs_writer.writerow([key, value])
 
 
+def save_metadate_in_pickle_file(path_to_image_file: str):
+    metadate_dict = read_image_metadate(path_to_image_file)
+    with open('metadate.pickle', 'wb') as pickle_file:
+        pickle.dump(metadate_dict, pickle_file)
+
+
 if __name__ == '__main__':
     image = '../tests/test_files/KSP_015561_00123_1h.jpg'
     image2 = '../tests/test_files/20231214EPAV9435.jpg'
     image3 = '../tests/test_files/20211201PEV_2795-Edit.JPG'
-    png = '../tests/test_files/pavlovsk.JPEG'
-    # ic(read_image_metadate(image
-    #     ))
-    save_metadate_in_file(png)
+    all_fields = '../tests/test_files/all_fields.JPG'
+    ic(read_image_metadate(all_fields
+                           ))
+    # save_metadate_in_file(all_fields)
+    save_metadate_in_pickle_file(image3)
