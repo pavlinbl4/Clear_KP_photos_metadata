@@ -17,4 +17,3 @@ metadata = read_exif_data(image_path)
 if metadata:
     print(metadata['Subject'])
     # ic(metadata)
-
