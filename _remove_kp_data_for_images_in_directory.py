@@ -1,10 +1,16 @@
+import os
+import sys
+
 from metadata_tools.metadate_optimization import metadate_clearing
 from tk_tools import select_folder_via_gui
 from find_file_hdd import find_files_in_dir_with_extension
 from loguru import logger
 
-logger.add("output.log", format="{time} {level} {message}", level="ERROR")
-logger.add("output.log", format="{time} {level} {message}", level="INFO")
+script_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
+log_file_path = os.path.join(script_dir, "metadata_edit.log")
+
+logger.add(log_file_path, format="{time} {level} {message}", level="INFO")
+logger.add(log_file_path, format="{time} {level} {message}", level="ERROR")
 
 
 def main():
